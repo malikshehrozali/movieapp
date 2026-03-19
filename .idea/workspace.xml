@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8e34bd48-f7c9-4f78-91f3-a3f34ddd2c87" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nativewind-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/explore.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/external-link.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/haptic-tab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/hello-wave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/parallax-scroll-view.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/themed-text.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/themed-view.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/collapsible.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants/theme.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/use-color-scheme.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/use-color-scheme.web.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/use-theme-color.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/reset-project.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3BA8ccmd67iq26u2vQoSDaO5APw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "projects",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/personal/practice/reactNative/mobile-movie",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.splitter.proportion": "0.3058104"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e34bd48-f7c9-4f78-91f3-a3f34ddd2c87" name="Changes" comment="" />
+      <created>1773920598119</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773920598119</updated>
+    </task>
+    <servers />
+  </component>
+</project>
