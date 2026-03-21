@@ -7,7 +7,6 @@
     "icon": "./assets/icons/logo.png",
     "scheme": "mobilemovie",
     "userInterfaceStyle": "automatic",
-    // "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -16,8 +15,8 @@
         "foregroundImage": "./assets/icons/logo.png",
         "backgroundColor": "#ffffff"
       },
-      // "edgeToEdgeEnabled": false,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.mobilemovie"
     },
     "web": {
       "output": "static",
@@ -29,8 +28,8 @@
         "expo-splash-screen",
         {
           "image": "./assets/icons/logo.png",
-          // "imageWidth": 200,
-          // "resizeMode": "contain",
+          "imageWidth": 200,
+          "resizeMode": "contain",
           "backgroundColor": "#ffffff",
           "dark": {
             "backgroundColor": "#000000"
