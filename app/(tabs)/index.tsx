@@ -1,10 +1,18 @@
+import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
+import useFetch from "@/hooks/useFetch";
 import { fetchMovies } from "@/services/api";
 import { useRouter } from "expo-router";
-import { useEffect, useState } from "react";
-import { FlatList, Image, ScrollView, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  Image,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
 
 interface Movie {
   id: number;
@@ -25,14 +33,12 @@ interface Movie {
 
 export default function Index() {
   const router = useRouter();
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const loadMovies = async () => {
-      const data = await fetchMovies();
-      setData(data);
-    };
-    loadMovies();
-  }, []);
+  const {
+    data: movies,
+    loading,
+    error,
+  } = useFetch(() => fetchMovies({ query: "" }), true);
+
   return (
     <View className="bg-primary flex-1">
       <Image source={images.bg} className="absolute w-full z-0" />
@@ -45,23 +51,55 @@ export default function Index() {
         }}
       >
         <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
-        <View className="flex-1 mt-5">
-          <SearchBar
-            onPress={() => router.push("/search")}
-            placeholder="Search..."
+        {loading ? (
+          <ActivityIndicator
+            size="large"
+            color="#0000ff"
+            className="my-20 self-center"
           />
-        </View>
-        <View></View>
-      </ScrollView>
-      <FlatList
-        data={data}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <Text className="text-white">{item.title}</Text>
+        ) : error ? (
+          <Text>Error fetching movies {error.message}</Text>
+        ) : (
+          <View className="flex-1 mt-5">
+            <SearchBar
+              onPress={() => router.push("/search")}
+              placeholder="Search..."
+            />
+            <>
+              <Text className="text-lg text-white font-semibold my-5  ">
+                Latest Movies{" "}
+              </Text>
+              <FlatList
+                data={movies}
+                renderItem={({ item }) => (
+                  <MovieCard
+                    adult={true}
+                    backdrop_path={""}
+                    genre_ids={[]}
+                    original_language={""}
+                    original_title={""}
+                    popularity={0}
+                    video={false}
+                    vote_count={0}
+                    {...item}
+                  />
+                )}
+                scrollEnabled={false}
+                numColumns={3}
+                keyExtractor={(item) => item.id.toString()}
+                // showsVerticalScrollIndicator={false}
+                columnWrapperStyle={{
+                  justifyContent: "flex-start",
+                  gap: 20,
+                  paddingRight: 5,
+                  marginBottom: 10,
+                }}
+                className="pb-32 mt-2"
+              />
+            </>
+          </View>
         )}
-        contentContainerStyle={{ paddingBottom: 10, paddingHorizontal: 20 }}
-        showsVerticalScrollIndicator={false}
-      />
+      </ScrollView>
     </View>
   );
 }

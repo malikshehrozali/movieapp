@@ -26,14 +26,18 @@ export const apiConfig = {
   },
 };
 
-export const fetchMovies = async (query?: string): Promise<Movie[]> => {
+export const fetchMovies = async ({
+  query,
+}: {
+  query?: string;
+}): Promise<Movie[]> => {
   const endpoint = query
-    ? `${apiConfig.baseUrl}/search/movie?query=${encodeURIComponent(query)}`
-    : `${apiConfig.baseUrl}/discover/movie?sort_by=popularity.desc`;
+    ? `${apiConfig.baseUrl}/search/movie?query=${encodeURIComponent(query)}&include_adult=true`
+    : `${apiConfig.baseUrl}/discover/movie?sort_by=popularity.desc&include_adult=true`;
 
   try {
-    console.log("Fetching movies from API...");
-    console.log(Constants.expoConfig?.extra?.movieApiKey);
+    // console.log("Fetching movies from API...");
+    // console.log(Constants.expoConfig?.extra?.movieApiKey);
     const response = await axios.get<MovieResponse>(`${endpoint}`, {
       headers: apiConfig.headers,
     });

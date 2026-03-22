@@ -35,3 +35,5 @@ const useFetch = <T>(
 
   return { loading, error, data, refetch: fetchData, reset };
 };
+
+export default useFetch;
