@@ -65,7 +65,6 @@ export const fetchDetails = async (id: number): Promise<Movie> => {
   }
 };
 
-
 // Add this new function, leave fetchMovies completely untouched
 export const fetchMoviesPaginated = async ({
   query,
