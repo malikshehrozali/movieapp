@@ -28,12 +28,14 @@ export const apiConfig = {
 
 export const fetchMovies = async ({
   query,
+  page = 1,
 }: {
   query?: string;
+  page?: number;
 }): Promise<Movie[]> => {
   const endpoint = query
-    ? `${apiConfig.baseUrl}/search/movie?query=${encodeURIComponent(query)}&include_adult=true`
-    : `${apiConfig.baseUrl}/discover/movie?sort_by=popularity.desc&include_adult=true`;
+    ? `${apiConfig.baseUrl}/search/movie?query=${encodeURIComponent(query)}&include_adult=true&page=${page}`
+    : `${apiConfig.baseUrl}/discover/movie?sort_by=popularity.desc&include_adult=true&page=${page}`;
 
   try {
     // console.log("Fetching movies from API...");
@@ -48,6 +50,47 @@ export const fetchMovies = async ({
   }
 };
 
+export const fetchDetails = async (id: number): Promise<Movie> => {
+  try {
+    const response = await axios.get<Movie>(
+      `${apiConfig.baseUrl}/movie/${id}?include_adult=true`,
+      {
+        headers: apiConfig.headers,
+      },
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching movie details:", error);
+    return [] as unknown as Movie;
+  }
+};
+
+
+// Add this new function, leave fetchMovies completely untouched
+export const fetchMoviesPaginated = async ({
+  query,
+  page = 1,
+}: {
+  query?: string;
+  page?: number;
+}): Promise<{ results: Movie[]; total_pages: number }> => {
+  const endpoint = query
+    ? `${apiConfig.baseUrl}/search/movie?query=${encodeURIComponent(query)}&include_adult=true&page=${page}`
+    : `${apiConfig.baseUrl}/discover/movie?sort_by=popularity.desc&include_adult=true&page=${page}`;
+
+  try {
+    const response = await axios.get<MovieResponse>(endpoint, {
+      headers: apiConfig.headers,
+    });
+    return {
+      results: response.data.results,
+      total_pages: response.data.total_pages,
+    };
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    return { results: [], total_pages: 0 };
+  }
+};
 // Urls
 // /discover/movie for getting the movies list,
 //

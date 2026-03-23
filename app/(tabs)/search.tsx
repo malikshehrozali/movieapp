@@ -16,19 +16,28 @@ import {
 } from "react-native";
 
 export default function search() {
+  const useDebounce = (value: string, delay: number) => {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+    }, [value, delay]);
+    return debouncedValue;
+  };
   const [query, setQuery] = useState<string>("");
-
+  const debouncedQuery = useDebounce(query, 500);
   const {
     data: movies = [],
     loading,
     error,
     refetch,
-  } = useFetch(() => fetchMovies({ query: query }), false);
+  } = useFetch(() => fetchMovies({ query: debouncedQuery }), false);
   useEffect(() => {
-    if (query.trim() !== "") {
+    if (debouncedQuery.trim() !== "") {
       refetch();
     }
-  }, [query]);
+  }, [debouncedQuery]);
   return (
     <View className="bg-primary flex-1">
       <Image source={images.bg} className="absolute w-full z-0" />
@@ -42,11 +51,11 @@ export default function search() {
       >
         <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
         <View className="mt-5">
-        <SearchBar
-          placeholder="Search..."
-          value={query}
-          onChangeText={setQuery}
-        />
+          <SearchBar
+            placeholder="Search..."
+            value={query}
+            onChangeText={setQuery}
+          />
         </View>
         {loading ? (
           <ActivityIndicator
