@@ -42,7 +42,7 @@ export default function _Layout() {
           backgroundColor: "#0f0D23",
           borderRadius: 50,
           marginHorizontal: 20,
-          marginBottom: 36,
+          marginBottom: 50,
           height: 50,
           position: "absolute",
           overflow: "hidden",
